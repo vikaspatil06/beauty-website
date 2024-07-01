@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Products Store</title>
+    <link rel="stylesheet" type="text/css" href="css/products.css">
+</head>
+
+<body>
+    <header>
+        <h4><b>Our Special Beauty Products</b> </h4>
+    </header>
+    <div class="upper">
+        <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo navLogo"><a href="#">Clarins</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Clarins</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Account</a></li>
+                </ul>
+            </div>
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+                <div class="searchBox">
+                    <div class="searchToggle">
+                        <i class='bx bx-x cancel'></i>
+                        <i class='bx bx-search search'></i>
+                    </div>
+                    <div class="search-field stylish-search-bar">
+                        <input type="text" placeholder="Search...">
+                        <button><i class='bx bx-search'></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </div>
+    <div class="down">
+    <nav>
+        <ul>
+            <li><button onclick="showCategory('face')">FACE</button></li>
+            <li><button onclick="showCategory('lips')">LIPS</button></li>
+            <li><button onclick="showCategory('eyes')">EYES</button></li>
+            <li><button onclick="showCategory('nails')">NAILS</button></li>
+            <li><button onclick="showCategory('skin')">SKIN CARE</button></li>
+
+
+        </ul>
+    </nav>
+    </div>  
+    <main>
+        <div id="category-content" class="category-content">
+            
+            <p><i><u>Select a category to view products.</u></i></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Clarins 2024. All rights reserved.</p>
+    </footer>
+    <script>
+        function showCategory(category) {
+    let content = '';
+
+    switch (category) {
+        case 'face':
+            content = `
+                <h2> Our Face Products</h2>
+                <br>
+                <br>
+                <div class="product">
+                    <img src=https://www.almay.com/-/media/Almay/Product-Images/Face/Almay_Ageless_Hydrating_Concealer_Soldier_3_Light-Medium_600x1065.ashx?revision=47b13f24-46c0-4818-b399-c43093d2eb8c&la=en&w=336">
+                    <h3><em>ALMAY Ageless Hydrating concealer</em> </h3>
+                    <p><u>Price:</u> <b> ₹950</b>  <strike>₹1080</strike> 15% OFF</p>
+                    <p>Description: Adding a hint of glow with cheek highlighters as the last part of makeup is like adding the garnishing condiments to a recipe. The last step is the one that spices up the whole thing-and dramatically enlivens the taste. However-just as garnishing flavors- if they go overboard- leave the food unsavory –similarly excess of the glow thingy spoils the look! </p>
+                </div>
+                                <hr/>
+
+                <div class="product">
+                    <img src="https://www.lakmeindia.com/cdn/shop/products/22080_H_6aa59f25-23fe-418d-b5b0-9da4997031c8_1000x.jpg?v=1607334873" alt="Product Image">
+                    <h3><em>LAKMĒ FACE SHEER BLUSHER </em> </h3>
+                    <p><u>Price:</u> <b> ₹549</b> <strike>₹799</strike> 20% OFF</p>
+                    <p>Description: Lakmé 9 To 5WEIGHTLESS Mousse Foundation is your answer to a workings women’s barrier to using foundation. It is a lightweight foundation meant for everyday use. It is so lightweight that you won’t even feel you are wearing foundation. It not only blends in effortlessly|| but gives a matte finish that lasts through the day.</p>
+                </div>
+                                <hr/>
+
+                <div class="product">
+                    <img src="https://www.smashbox.com/media/images/products/388x396/sb_sku_C57L01_388x396_0.jpg" alt="Product Image">
+                    <h3><em>SBX Always on skin-balancing Foundation </em> </h3>
+                    <p><u>Price:</u> <b> ₹849</b> <strike>₹999   </strike> 15% OFF</p>
+                    <p>Description: New SBX skin-balancing Foundation isn't just makeup – it’s skincare first makeup. Supercharged with 1% Vitamin C + E complex, this multi-slayer illuminates your skin from within while diminishing the appearance of blemishes and blurring imperfections. With SPF 20 protection, it shields your skin from sun damage and photoaging while keeping it healthy and youthful.</p>               
+                    </div>
+                <hr/>
+        <div class="product">
+                    <img src="https://images.contentstack.io/v3/assets/blt3bfa7d7d8c566146/blt953fb3223a2fb131/63dbbbd26d590c21c347cae1/99240001601_-_3.jpg?width=640&quality=50&auto=webp" alt="Product Image">
+                    <h3><em> CoverGirl Invisible Blemish Concealer</em> </h3>
+                    <p><u>Price:</u> <b> ₹659</b> <strike> ₹749 </strike> 12% OFF</p>
+                   <p>Description: Discover flawless skin with CoverGirl Invisible Blemish Concealer, your secret weapon for a perfect complexion. This lightweight, creamy formula effortlessly hides blemishes, dark spots, and other imperfections, providing you with smooth, even skin tone all day long.</p>               
+                </div>
+            <hr/>
+            <div class="product">
+                    <img src="https://www.elfcosmetics.com/dw/image/v2/BBXC_PRD/on/demandware.static/-/Sites-elf-master/default/dw60ed86a4/2023/HaloGlowWandHighlight/84692_OpenA_R.jpg?sfrm=png&sw=465" alt="Product Image">
+                    <h3><em>E.L.F Halo Glow Highlight Beauty Wand  </em> </h3>
+                    <p><u>Price:</u> <b> ₹755</b> <strike>₹889 </strike>   15% OFF</p>
+                <p>Description: The E.L.F Highlighter Wand is a must-have in your beauty arsenal for achieving a radiant, dewy glow effortlessly. Designed to highlight and illuminate, this highlighter wand accentuates your best features with a shimmering, halo-like finish.</p>               
+ </div>
+            `;
+            break;
+        case 'lips':
+            content = `
+                <h2>Our Lips Products</h2>
+                <br>
+                <br>
+                <div class="product">
+                    <img src="https://www.ciatelondon.com/cdn/shop/products/VLL01-Velvet-Lip-Liner-Cocoa-Open-min_baa2eb7a-be0b-46a8-a825-3331de29e7c9_720x.png?v=1666106914" alt="Product Image">
+                    <h3><em> Ciate Velvet Lip Liner </em> </h3>
+                    <p><u>Price:</u> <b> ₹1199</b> <strike>₹1339 </strike> 12% OFF</p>
+
+                    <p>Description: The Ciaté Velvet Lip Liner is designed to enhance and define your lips with precision and ease. This high-performance lip liner offers a range of benefits that make it a standout product in any makeup routine.</p>
+                </div>
+                <hr/>
+                <div class="product">
+                    <img src="https://essencemakeup.com/cdn/shop/files/4059729440891_2_ea03c440-9d5b-4f35-b413-88151ded3c40_300x.png?v=1717711374" alt="Product Image">
+                    <h3><em>Essence Chilly Vanilly Lip Gloss </em> </h3>
+                    <p><u>Price:</u> <b> ₹599</b> <strike>₹799</strike> 30% OFF</p>
+
+                    <p>Description: The Essence Chilly Vanilly Lip Gloss is a delightful addition to your beauty collection, offering a refreshing and luscious look for your lips. This lip gloss combines a high-shine finish with nourishing ingredients, making it a must-have for a glamorous yet comfortable lip experience.</p>
+                </div>
+                <hr/>
+                <div class="product">
+                    <img src="https://www.lakmeindia.com/cdn/shop/files/29765_H-8901030993596_1000x.jpg?v=1706006691" alt="Product Image">
+                    <h3><em>LAKMĒ XTRAORDIN-AIRY LIP MOUSSE</em></h3>
+                    <p><u>Price:</u> <b> ₹570</b> <strike>₹699</strike> 19% OFF</p>
+
+                    <p>Description: Xtra love for the extraordinary you with Lakme Xtraordin-airy Lip Mousse in a range of 14 new, highly desirable hues. A light-as-air, velvet matte lipstick that's whipped to perfection, just for you. Indulge in its super-soft mousse texture that effortlessly hugs your lips and leaves them feeling oh-so-luxe. Feel the magic of self-love in every swipe as the velvet smooth texture glides effortlessly, leaving you with lips that look bold yet feel cushiony soft and light..</p>
+                </div>
+                <hr/>
+                <div class="product">
+                    <img src="https://www.almay.com/-/media/Almay/Product-Images/Lip/almay_dotcom_1H24_cc_lip_gloss_soldier_peachy_sky_600x1065.ashx?revision=ff0d2e65-c24d-4e8e-94a4-0d8a07e7fc5b&la=en&w=336" alt="Product Image">
+                    <h3><em>Alamy Color & care lip gloss </em> </h3>
+                    <p><u>Price:</u> <b> ₹949</b> <strike>₹1079</strike> 12% OFF</p>
+
+                    <p>Description: Alamy Color & Care Lip Gloss is a beauty product designed to provide both vibrant color and lip care. This lip gloss is enriched with nourishing ingredients that hydrate and protect the lips while offering a glossy finish. It is typically formulated with vitamins and natural oils to keep lips soft and moisturized. Alamy Color & Care Lip Gloss is available in a variety of shades, allowing users to find the perfect color for any occasion. .</p>
+                </div>
+                <hr/>
+                <div class="product">
+                    <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2Fsugar-cosmetics-lipping-on-the-edge-lip-liner-01-taffeta-terracotta-13278188568659.jpg%3Fv%3D1619109027&w=256&q=75" alt="Product Image">
+                    <h3><em>Lipping on the Edge Lip Liner </em> </h3>
+                    <p><u>Price:</u> <b> ₹473</b> <strike>₹525</strike> 10% OFF</p>
+
+                    <p>Description: The Sugar Lipping on the Edge Lip Liner is a precision lip liner designed to define and enhance the shape of your lips. This product offers rich, pigmented color that glides on smoothly, ensuring crisp, clean lines. Formulated to be long-lasting and smudge-proof, it helps prevent feathering and bleeding of lip color, keeping your lipstick or lip gloss in place throughout the day.</p>
+                </div>
+                <hr/>
+            `;
+            break;
+        case 'eyes':
+            content = `
+                <h2>Our Eyes Products</h2>
+                <br>
+                <br>
+
+                <div class="product">
+                    <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2FEyeWarnedYouSo_DoubleMatteEyeliner-1080x10801.jpg%3Fv%3D1685635241&w=256&q=75" alt="Product Image">
+                    <h3><em> Sugar Double Matte EyeLiner</em></h3>
+                    <p><u>Price:</u> <b> ₹712</b> <strike>₹785</strike> 10% OFF</p>
+                    <p>Description: An intensely pigmented liquid eyeliner with 17+ hour, moisture-resistant wear. With a highly precise application and an ultra-matte finish, SUGAR Eye Warned You So! Double Matte Eyeliner is available in 4 bold shades and is perfect for any eye makeup style. </p>
+                </div>
+                <hr/>
+                <div class="product">
+                    <img src="https://www.hourglasscosmetics.com/cdn/shop/products/2021_MascaraDuo_Open_1024x1309_55c96a3b-3b16-45fc-8b5b-a6591e2ff2c9_1080x.jpg?v=1631229120" alt="Product Image">
+                    <h3><em>HourGlass Unlocked Mascara Duo</em> </h3>
+                    <p><u>Price:</u> <b> ₹3499</b> <strike>₹4025</strike> 15% OFF</p>
+                    <p>Description:A must-have gift set featuring two bestsellers, Unlocked Instant Extensions Mascara and Caution™ Extreme Lash Mascara, to customize your lashes. This limited-edition duo allows you to create a variety of looks. Achieve the appearance of lash extensions in an instant with Unlocked Mascara or build 400% more volume for a dramatic look with Caution Mascara. </p>
+                </div>
+                <hr/>
+                <div class="product">
+                    <img src="https://www.lakmeindia.com/cdn/shop/files/29267_H_8901030895661_1000x.jpg?v=1698907752" alt="Product Image">
+                    <h3><em>LAKMĒ 9TO5 EYECONIC LIQUID LINER</em></h3>
+                    <p><u>Price:</u> <b> ₹360</b> <strike>₹499</strike> 14% OFF</p>
+                    <p>Description: Introducing the all new Lakmé Eyeconic Liquid Eyeliner. This liquid liner with a unique flex-tip brush, lets you create any look you desire. From thin lines for everyday smart looks, to bold flicks for special occasions, this liner lets you achieve different looks for difference occasions. Its intense green color, smudge-free, water-proof and transfer-proof formula lasts for up to 24 hours, giving you perfect lined eyes all day </p>
+                </div>
+                <hr/>
+                <div class="product">
+                    <img src="https://beautybarn.in/wp-content/uploads/2023/05/6-eyebrow-expert-1-1-600x800.png" alt="Product Image">
+                    <h3><em> Annalia Beauty Eyebrow Expert</em></h3>
+                    <p><u>Price:</u> <b> ₹1079</b> <strike>₹1199</strike> 10% OFF</p>
+                    <p>Description: The Annalia Beauty luxury brush is a high-quality makeup tool that can help you achieve a flawless, professional-looking makeup application. The brush is crafted from a combination of high-quality natural and synthetic fibers.EYEBROW EXPERT The Eyebrow Expert Is an essential tool for precision application of brow products.</p>
+                </div>
+                <hr/>
+                <div class="product">
+                    <img src="https://hindash.com/cdn/shop/products/8.jpg?v=1644867564" alt="Product Image">
+                    <h3><em>Hindash HeroLine </em></h3>
+                    <p><u>Price:</u> <b> ₹1999</b> <strike>₹2179</strike> 14% OFF</p>
+                    <p>Description: Heroline is an ultra-black eyeliner made for extreme wear and precision. Its vegan rich ink formula matched with the brush tip length makes gliding on your liner so intuitive, yet extremely bold and resistant. Heroline is encased in a luxurious aluminum columned shell designed to give you the ultimate grip for precise application. </p>
+                </div>
+            `;
+            break;
+            case 'nails':
+            content = `
+                <h2> Our Nail Products</h2>
+                <br>
+                <br>
+                <div class="product">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSa5rPfiBplzOA4NJlBB55-rnhsfFs8VTYDFR5F7lUPTRwH29dmIYwJ0cba7rmIWcUeWBKNcHpu31IjRIcXyIGKmB7kG4I-s24PCqd2NTrGpjvtF_Y_g00VMg&usqp=CAE">
+                    <h3><em> INGLOT Playinn Nail Polish </em> </h3>
+                    <p><u>Price:</u> <b> ₹1489</b> <strike>₹1649</strike> 10% OFF</p>
+                    <p>Description: The Inglot Playinn Nail Polish - 111 Shade (15ml) is perfect for adding some extra dazzle to your nails. This glossy nail polish delivers bright color and has a quick-drying formula. It is a long-lasting nail paint that stays put for many days. The Inglot nail polish is also an easy-to-apply nail color with a rounded brush for smooth and hassle-free application.</p>
+                </div>
+                <hr/>
+                <div class="product">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRI0ywdqv_XnGmVMLEoxtE9mevte_LgtAzl9O-Uye-bJ7pf3LMvx7W11JxLQLB1Wai1vdnX-uN4mYbV08FpRDV4oqL5Mw8wkKyzzsuUGBBKtKG_CqzcCIsr&usqp=CAE">
+                    <h3><em>Plum Color Affair Nail Color</em> </h3>
+                    <p><u>Price:</u> <b> ₹175</b> <strike>₹199 </strike> 12.5% OFF</p>
+                    <p>Description: Plum Color Affair Nail Color is a vibrant and trendy nail polish designed to provide a salon-quality finish at home. This nail color offers a rich, opaque formula that delivers intense pigmentation with just one or two coats. It is long-lasting and chip-resistant, ensuring your manicure stays fresh and flawless for days.</p>
+                </div>
+                                <hr/>
+                                <div class="product">
+                    <img src="https://www.lakmeindia.com/cdn/shop/files/19615_H-8901030989254_1000x.jpg?v=1710413093">
+                    <h3><em>LAKMĒ NAIL COLOR REMOVER, 27 ML</em> </h3>
+                    <p><u>Price:</u> <b> ₹95</b> <strike>₹99</strike> 4% OFF</p>
+                    <p>Description: Now getting rid of chipped nail color or preparing your nails for a new shade is so easy! Enriched with vitamins|| Lakmé Nail Color Remover prevents excessive dryness around the nails|| removes color completely & strengthens the nails. It's the one product you need between your manicures! Get this small bottle of Lakmé’s Nail Color Remover right away! You do not need to use too much of the product to remove the nail paint color. </p>
+                </div>
+                                 `;
+            break;
+            case 'skin':
+            content = `
+                <h2> Our Skin Care Products</h2>
+                <br>
+                <br>
+                <div class="product">
+                    <img src="https://www.elizabetharden.com/cdn/shop/files/2104-a0133041-ret-hpr-cream-atf-2.jpg?v=1701980449&width=540">
+                    <h3><em>Elizabeth Arden Ceramide Rapid Skin-Renewing Water Cream</em></h3>
+                    <p><u>Price:</u> <b> ₹1599</b> <strike>₹1999</strike> 20% OFF</p>
+                    <p>Description: Introducing NEW Retinol + HPR Ceramide Rapid Skin-Renewing Water Cream. Discover next level retinol action without the typical retinol reaction. After the very first use, this potent yet gentle moisture cream leaves skin feeling nourished, looking radiant and revitalized.  </p>
+                </div>
+                <hr/>
+
+                <div class="product">
+                    <img src="https://www.lakmeindia.com/cdn/shop/files/23137_H-8901030974403_1000x.jpg?v=1696488333">
+                    <h3><em>LAKMĒ PEACH MILK MOISTURIZER BODY LOTION </em> </h3>
+                    <p><u>Price:</u> <b> ₹475</b> <strike>₹525</strike> 10% OFF</p>
+                    <p>Description: Is your skin losing moisture as the day goes by? Lakmé brings to you a moisturizer which is a blend of wholesome peaches and milk, which nourishes the skin deeply without making it appear oily. This light moisturizer dozed with SPF 24 has a soothing fragrance, which will make you fall in love with it instantly. This lotion easily absorbs into the skin to lock moisture for 12 hours to give you soft, smooth and glowing skin.</p>
+                </div>
+                <hr/>
+
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR_fd5XebiGdVLji2_6UZ06lDIfZK33tHw232mKffvz-hBwJrXE13MBfeuKGAKLZ7pVW0WHNqSi6q9AsWmeH7xgnhGbNHoTbumaoidl0rvRcSCzLp6jXcg5Xn_7K-ZEHVe5GqgdqBE&usqp=CAc" alt="Product Image">
+                    <h3><em>Advanced Snail 96 Mucin Power Essence  </em> </h3>
+                    <p><u>Price:</u> <b> ₹999</b> <strike>₹1189</strike> 16% OFF</p>
+                    <p>Description: Advanced Snail 96 Mucin Power Essence by COSRX is a highly concentrated essence formulated with 96% snail secretion filtrate. This lightweight, fast-absorbing essence is designed to hydrate, repair, and rejuvenate the skin, enhancing its natural radiance and elasticity.</p>
+                    </div>
+                    <hr/>
+
+                <div class="product">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS46IADd8fi48n8CtHikQ4SPwpJPtkXSNtDNlPbaP_214KjdTsK9BDpGBiEkcM4oCTunlB2JXTAj4vJbPAG7Uzhw0-2QjCN0VApIwLwJ4uGFVY_xoHtn2WvTnX7x5LvSkk3TgWxGJ2ssA&usqp=CAc" alt="Product Image">
+                    <h3><em>UNIQAYA Tinted Sunscreen SPF 50 PA+++ </em> </h3>
+                    <p><u>Price:</u> <b> ₹699</b> <strike>₹899</strike> 22% OFF</p>
+                    <p>Description: UniQaya’s SunScreen: Full Protection Broad Spectrum Tinted Sunscreen with SPF 50 is your go-to solution for complete sun protection. It is formulated with the perfect blend of natural ingredients to keep your skin nourished and protected from harmful UVA, UVB and blue rays.This tinted sunscreen comes with an SPF of 50, which provides maximum protection to your skin from sun damage. The broad-spectrum formula effectively blocks the harmful UVA and UVB rays, preventing premature aging and sunburn.</p>
+                    </div>
+                    <hr/>
+
+                <div class="product">
+                    <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1652717441-acure-brightening-facial-scrub-1652717431.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Product Image">
+                    <h3><em> Acure Brightening Facial Scrub</em> </h3>
+                    <p><u>Price:</u> <b> ₹499</b> <strike>₹579</strike> 14% OFF</p>
+                    <p>Description: Infused with botanicals like walnut shell powder and lemon peel, this exfoliating face scrub came to impress in our GH Beauty Lab face scrub test. It wowed with its deep-cleaning performance, scoring perfectly for cleansing in a test of full-cover makeup removal and highest with testers for both clearing impurities and brightening skin. In fact, a majority of Lab testers called it the best scrub they'd ever used, noting it left skin "so refreshed and smooth, I didn't need makeup" and "matte for hours after use.</p>
+                    </div>
+            `;
+            break;
+        default:
+            content = '<p>Select a category to view products.</p>';
+    }
+
+    document.getElementById('category-content').innerHTML = content;
+}
+
+    </script>
+</body>
+</html>

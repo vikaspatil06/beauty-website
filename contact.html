@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <!--boxicons link-->
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body>
+    <div>
+        <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#">Clarins</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Clarins</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="prooducts.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="login.html">Account</a></li>
+                </ul>
+            </div>
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    </div>
+    
+    <div class="container">
+        <h1 style="text-align: center;">Contact Us</h1>
+       <div style="border: 2px solid black;"></div>
+        <p>Clarins is a luxury beauty brand known for its plant-based products and innovative skincare solutions.<br>
+            If you have any questions or comments please contatct us via the form below.<br>
+            We would love to hear from you..!!!
+        </p>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <span class="error" id="nameError"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <span class="error" id="emailError"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+                <span class="error" id="messageError"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <!--footer section-->
+   <footer>
+    <p>Clarins</p>
+    <p>Connect with us on different platforms</p>
+    <div class="center" align="center">
+        <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="#"><i class='bx bxl-whatsapp-square' ></i></a>
+        <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+        <a href="#"><i class='bx bxl-telegram'></i></a>
+    </div>
+
+   </footer>
+   <script>
+       document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var isValid = true;
+    
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+    
+    if (name === '') {
+        isValid = false;
+        document.getElementById('nameError').textContent = 'Name is required.';
+    } else {
+        document.getElementById('nameError').textContent = '';
+    }
+    
+    if (email === '') {
+        isValid = false;
+        document.getElementById('emailError').textContent = 'Email is required.';
+    } else {
+        document.getElementById('emailError').textContent = '';
+    }
+    
+    if (message === '') {
+        isValid = false;
+        document.getElementById('messageError').textContent = 'Message is required.';
+    } else {
+        document.getElementById('messageError').textContent = '';
+    }
+    
+    if (isValid) {
+        alert('Form submitted successfully!');
+        // You can add code here to actually submit the form data to the server
+    }
+});
+
+const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle"),
+      sidebarOpen = document.querySelector(".sidebarOpen"),
+      siderbarClose = document.querySelector(".siderbarClose");
+      let getMode = localStorage.getItem("mode");
+          if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+          }
+// js code to toggle dark and light mode
+      modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+        // js code to keep user selected mode even page refresh or file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+      });
+// js code to toggle search box
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+      });
+ 
+      
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+    nav.classList.add("active");
+});
+body.addEventListener("click" , e =>{
+    let clickedElm = e.target;
+    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+        nav.classList.remove("active");
+    }
+});
+   </script>
+</body>
+</html>
