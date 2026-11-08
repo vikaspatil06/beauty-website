@@ -1,429 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        body {
-            background-color: #f5f5f5;
-            margin: 70px;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body.dark{
-    --body-color: #18191A;
-    --nav-color: #242526;
-    --side-nav: #242526;
-    --text-color: #CCC;
-    --search-bar: #242526;
-}
-nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 70px;
-    width: 100%;
-    background-color: var(--nav-color);
-    z-index: 100;
-}
-body.dark nav{
-    border: 1px solid #393838;
-}
-nav .nav-bar{
-    position: relative;
-    height: 100%;
-    max-width: 1000px;
-    width: 100%;
-    background-color: var(--nav-color);
-    margin: 0 auto;
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-nav .nav-bar .sidebarOpen{
-    color: var(--text-color);
-    font-size: 25px;
-    padding: 5px;
-    cursor: pointer;
-    display: none;
-}
-nav .nav-bar .logo a{
-    font-size: 25px;
-    font-weight: 500;
-    color: var(--text-color);
-    text-decoration: none;
-}
-.menu .logo-toggle{
-    display: none;
-}
-.nav-bar .nav-links{
-    display: flex;
-    align-items: center;
-}
-.nav-bar .nav-links li{
-    margin: 0 5px;
-    list-style: none;
-}
-.nav-links li a{
-    position: relative;
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 10px;
-}
-.nav-links li a::before{
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-    background-color: var(--text-color);
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-.nav-links li:hover a::before{
-    opacity: 1;
-}
-.nav-bar .darkLight-searchBox{
-    display: flex;
-    align-items: center;
-}
-.darkLight-searchBox .dark-light,
-.darkLight-searchBox .searchToggle{
-    height: 40px;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 5px;
-}
-.dark-light i,
-.searchToggle i{
-    position: absolute;
-    color: var(--text-color);
-    font-size: 22px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.dark-light i.sun{
-    opacity: 0;
-    pointer-events: none;
-}
-.dark-light.active i.sun{
-    opacity: 1;
-    pointer-events: auto;
-}
-.dark-light.active i.moon{
-    opacity: 0;
-    pointer-events: none;
-}
-.searchToggle i.cancel{
-    opacity: 0;
-    pointer-events: none;
-}
-.searchToggle.active i.cancel{
-    opacity: 1;
-    pointer-events: auto;
-}
-.searchToggle.active i.search{
-    opacity: 0;
-    pointer-events: none;
-}
-.searchBox{
-    position: relative;
-}
-.searchBox .search-field{
-    position: absolute;
-    bottom: -85px;
-    right: 5px;
-    height: 50px;
-    width: 300px;
-    display: flex;
-    align-items: center;
-    background-color: var(--nav-color);
-    padding: 3px;
-    border-radius: 6px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
-}
-.searchToggle.active ~ .search-field{
-    bottom: -74px;
-    opacity: 1;
-    pointer-events: auto;
-}
-.search-field::before{
-    content: '';
-    position: absolute;
-    right: 14px;
-    top: -4px;
-    height: 12px;
-    width: 12px;
-    background-color: var(--nav-color);
-    transform: rotate(-45deg);
-    z-index: -1;
-}
-.search-field input{
-    height: 100%;
-    width: 100%;
-    padding: 0 45px 0 15px;
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--search-text);
-    background-color: var(--search-bar);
-}
-body.dark .search-field input{
-    color: var(--text-color);
-}
-.search-field i{
-    position: absolute;
-    color: var(--nav-color);
-    right: 15px;
-    font-size: 22px;
-    cursor: pointer;
-}
-body.dark .search-field i{
-    color: var(--text-color);
-}
-@media (max-width: 790px) {
-    nav .nav-bar .sidebarOpen{
-        display: block;
-    }
-    .menu{
-        position: fixed;
-        height: 100%;
-        width: 320px;
-        left: -100%;
-        top: 0;
-        padding: 20px;
-        background-color: var(--side-nav);
-        z-index: 100;
-        transition: all 0.4s ease;
-    }
-    nav.active .menu{
-        left: -0%;
-    }
-    nav.active .nav-bar .navLogo a{
-        opacity: 0;
-        transition: all 0.3s ease;
-    }
-    .menu .logo-toggle{
-        display: block;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .logo-toggle .siderbarClose{
-        color: var(--text-color);
-        font-size: 24px;
-        cursor: pointer;
-    }
-    .nav-bar .nav-links{
-        flex-direction: column;
-        padding-top: 30px;
-    }
-    .nav-links li a{
-        display: block;
-        margin-top: 20px;
-    }
-}
-
-        .content {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-
-        h1 {
-            color: #e91e63;
-        }
-
-        p {
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .team {
-            margin-top: 30px;
-        }
-
-        .team h2 {
-            color: #e91e63;
-            margin-bottom: 20px;
-        }
-
-        .team-member {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .team-member img {
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            margin-right: 20px;
-        }
-
-        .team-member p {
-            margin: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Clarins</title>
+  <meta name="description" content="About Clarins — our story, our vision, and the team of 10 behind this beauty products store.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
-
-    <!-- Navbar -->
-    <div>
-        <nav>
-        <div class="nav-bar">
-            <i class='bx bx-menu sidebarOpen' ></i>
-            <span class="logo navLogo"><a href="#">CodingLab</a></span>
-            <div class="menu">
-                <div class="logo-toggle">
-                    <span class="logo"><a href="#">CodingLab</a></span>
-                    <i class='bx bx-x siderbarClose'></i>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.html">Account</a></li>
-                </ul>
-            </div>
-            <div class="darkLight-searchBox">
-                <div class="dark-light">
-                    <i class='bx bx-moon moon'></i>
-                    <i class='bx bx-sun sun'></i>
-                </div>
-                <div class="searchBox">
-                   <div class="searchToggle">
-                    <i class='bx bx-x cancel'></i>
-                    <i class='bx bx-search search'></i>
-                   </div>
-                    <div class="search-field">
-                        <input type="text" placeholder="Search...">
-                        <i class='bx bx-search'></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <button class="icon-btn sidebarOpen" aria-label="Open menu"><i class="bx bx-menu"></i></button>
+      <a class="logo" href="home.html"><img src="images/Clarins-removebg-preview.png" alt="Clarins logo">Clarins</a>
+      <ul class="nav-links">
+        <li><button class="icon-btn nav-close" aria-label="Close menu"><i class="bx bx-x"></i></button></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Account</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn dark-light" aria-label="Toggle dark mode"><i class="bx bx-moon moon"></i><i class="bx bx-sun sun"></i></button>
+        <a class="icon-btn" href="products.html" aria-label="Wishlist"><i class="bx bx-heart"></i><span class="count-badge" id="wish-count" hidden>0</span></a>
+        <button class="icon-btn" id="cart-btn" aria-label="Open shopping bag"><i class="bx bx-shopping-bag"></i><span class="count-badge" id="cart-count" hidden>0</span></button>
+      </div>
     </div>
+  </header>
+  <div class="nav-overlay"></div>
 
-    <!-- About Us Content -->
-    <div class="content">
-        <h1>About Us</h1>
-        <p>Welcome to our beauty products store! Our mission is to provide high-quality beauty products that enhance the natural beauty of our customers. We believe that everyone deserves to feel confident and beautiful in their own skin.</p>
-        
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Since 2020</span>
+      <h1>About Us</h1>
+      <p>Welcome to our beauty products store! Our mission is to provide high-quality beauty products that enhance the natural beauty of our customers.</p>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container">
+      <div class="prose-card">
         <h2>Our Story</h2>
         <p>Founded in 2020, our company started with a simple idea: to offer a wide range of beauty products that cater to diverse beauty needs. Over the years, we have grown into a trusted brand with a loyal customer base, thanks to our commitment to quality and customer satisfaction.</p>
-        
         <h2>Our Vision</h2>
         <p>We envision a world where everyone can access the best beauty products that suit their unique preferences and needs. Our goal is to be a leading provider of beauty products, known for our innovation, quality, and customer-centric approach.</p>
-        
-        <div class="team">
-            <h2>Meet Our Team</h2>
-            <div class="team-member">
-               
-                <p><strong>1. Vikas Patil</strong></p>
-            </div>
-            <div class="team-member">
-               
-                <p><strong>2. Pratiksha Bombale</strong></p>
-            </div>
-            <div class="team-member">
-               
-                <p><strong>3.Tanvi Rawal</strong></p>
-            </div>
-            <div class="team-member">
-               
-                <p><strong>4. Preeti Bhoge</strong></p>
-            </div>
-            <div class="team-member">
-               
-                <p><strong>5. Piyush Patil</strong></p>
-            </div>
-            <div class="team-member">
-               
-                <p><strong>6. Shravani Adhav</strong></p>
-            </div>
-            <div class="team-member">
-               
-                <p><strong>7. Tanay Koshti</strong></p>
-            </div>
-            <div class="team-member">
-               
-                <p><strong>8. Praful Ramane</strong></p>
-            </div>
-            <div class="team-member">
-               
-                <p><strong>9. Rajnandini Pawar</strong></p>
-            </div>
-            <div class="team-member">
-               
-                <p><strong>10. Kashish Avghare</strong></p>
-            </div>
-            
+        <h2>Meet Our Team</h2>
+        <p>A group project built by a team of 10 — every page, product and feature on this site was made by us.</p>
+        <div class="team-grid">
+          <div class="team-card"><div class="avatar">V</div><strong>Vikas Patil</strong></div>
+          <div class="team-card"><div class="avatar">P</div><strong>Pratiksha Bombale</strong></div>
+          <div class="team-card"><div class="avatar">T</div><strong>Tanvi Rawal</strong></div>
+          <div class="team-card"><div class="avatar">P</div><strong>Preeti Bhoge</strong></div>
+          <div class="team-card"><div class="avatar">P</div><strong>Piyush Patil</strong></div>
+          <div class="team-card"><div class="avatar">S</div><strong>Shravani Adhav</strong></div>
+          <div class="team-card"><div class="avatar">T</div><strong>Tanay Koshti</strong></div>
+          <div class="team-card"><div class="avatar">P</div><strong>Praful Ramane</strong></div>
+          <div class="team-card"><div class="avatar">R</div><strong>Rajnandini Pawar</strong></div>
+          <div class="team-card"><div class="avatar">K</div><strong>Kashish Avghare</strong></div>
         </div>
+        <div style="text-align:center;margin-top:32px">
+          <a class="btn" href="products.html">Shop Our Products</a>
+          <a class="btn btn-ghost" href="contact.html">Get in Touch</a>
+        </div>
+      </div>
     </div>
-<script>
-    const body = document.querySelector("body"),
-      nav = document.querySelector("nav"),
-      modeToggle = document.querySelector(".dark-light"),
-      searchToggle = document.querySelector(".searchToggle"),
-      sidebarOpen = document.querySelector(".sidebarOpen"),
-      siderbarClose = document.querySelector(".siderbarClose");
-      let getMode = localStorage.getItem("mode");
-          if(getMode && getMode === "dark-mode"){
-            body.classList.add("dark");
-          }
-// js code to toggle dark and light mode
-      modeToggle.addEventListener("click" , () =>{
-        modeToggle.classList.toggle("active");
-        body.classList.toggle("dark");
-        // js code to keep user selected mode even page refresh or file reopen
-        if(!body.classList.contains("dark")){
-            localStorage.setItem("mode" , "light-mode");
-        }else{
-            localStorage.setItem("mode" , "dark-mode");
-        }
-      });
-// js code to toggle search box
-        searchToggle.addEventListener("click" , () =>{
-        searchToggle.classList.toggle("active");
-      });
- 
-      
-//   js code to toggle sidebar
-sidebarOpen.addEventListener("click" , () =>{
-    nav.classList.add("active");
-});
-body.addEventListener("click" , e =>{
-    let clickedElm = e.target;
-    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
-        nav.classList.remove("active");
-    }
-});
-</script>
-</body>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Clarins</div>
+          <p>High-quality beauty products that enhance your natural beauty — because everyone deserves to feel confident in their own skin.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Facebook"><i class="bx bxl-facebook-circle"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bx bxl-whatsapp-square"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+            <a href="#" aria-label="Telegram"><i class="bx bxl-telegram"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html?cat=face">Face</a></li>
+            <li><a href="products.html?cat=lips">Lips</a></li>
+            <li><a href="products.html?cat=eyes">Eyes</a></li>
+            <li><a href="products.html?cat=nails">Nails</a></li>
+            <li><a href="products.html?cat=skin">Skin Care</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign In</a></li>
+            <li><a href="index.html">Sign Up</a></li>
+            <li><a href="products.html">All Products</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; Clarins 2026. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag">
+    <div class="cart-head"><h3>Your Bag</h3><button class="icon-btn" id="cart-close" aria-label="Close bag"><i class="bx bx-x"></i></button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-foot">
+      <div class="cart-total-row"><span>Total</span><span id="cart-total">₹0</span></div>
+      <p class="cart-savings" id="cart-savings"></p>
+      <button class="btn btn-block" id="checkout-btn">Checkout</button>
+      <button class="btn btn-ghost btn-block" id="clear-cart-btn" style="margin-top:8px">Clear Bag</button>
+    </div>
+  </aside>
+  <div id="toast-container"></div>
+
+  <script src="js/app.js"></script>
+</body>
 </html>

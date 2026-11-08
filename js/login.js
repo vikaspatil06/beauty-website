@@ -1,68 +1,27 @@
-    function login(e) {
-        e.preventDefault();
-        console.log("hi")
-        let myForm = document.getElementById("form");
-        console.log(myForm)
-
-        let email = myForm.email.value;
-
-        let password = myForm.password.value;
-        console.log(email, password)
-        let all_users = JSON.parse(localStorage.getItem("users"))
-
-        let result = false;
-        all_users.forEach(element => {
-
-            if (element.email === email && element.password == password) {
-
-                result = true
-                window.location.href = "../index.html"
-
-
-            }
-
-
-        });
-
-        if (!result) {
-            alert("invalid credentials")
-        }
-
-    }
-const body = document.querySelector("body"),
-      nav = document.querySelector("nav"),
-      modeToggle = document.querySelector(".dark-light"),
-      searchToggle = document.querySelector(".searchToggle"),
-      sidebarOpen = document.querySelector(".sidebarOpen"),
-      siderbarClose = document.querySelector(".siderbarClose");
-      let getMode = localStorage.getItem("mode");
-          if(getMode && getMode === "dark-mode"){
-            body.classList.add("dark");
-          }
-// js code to toggle dark and light mode
-      modeToggle.addEventListener("click" , () =>{
-        modeToggle.classList.toggle("active");
-        body.classList.toggle("dark");
-        // js code to keep user selected mode even page refresh or file reopen
-        if(!body.classList.contains("dark")){
-            localStorage.setItem("mode" , "light-mode");
-        }else{
-            localStorage.setItem("mode" , "dark-mode");
-        }
-      });
-// js code to toggle search box
-        searchToggle.addEventListener("click" , () =>{
-        searchToggle.classList.toggle("active");
-      });
- 
-      
-//   js code to toggle sidebar
-sidebarOpen.addEventListener("click" , () =>{
-    nav.classList.add("active");
-});
-body.addEventListener("click" , e =>{
-    let clickedElm = e.target;
-    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
-        nav.classList.remove("active");
-    }
-});
+/* Clarins — login (localStorage demo auth, same as before).
+   Fixed: the old file crashed when localStorage had no users
+   (JSON.parse(null).forEach) and redirected to "../index.html".
+   Now: guarded, inline error text, redirect to home.html. */
+function login(e) {
+  if (e) e.preventDefault();
+  var form = document.getElementById("form");
+  var err = document.getElementById("login-error");
+  if (!form) return;
+  var email = form.email ? form.email.value.trim() : "";
+  var password = form.password ? form.password.value : "";
+  var allUsers = [];
+  try { allUsers = JSON.parse(localStorage.getItem("users")) || []; } catch (err2) { allUsers = []; }
+  var ok = allUsers.some(function (u) { return u.email === email && u.password === password; });
+  if (ok) {
+    try { localStorage.setItem("clarins_session", JSON.stringify({ email: email })); } catch (err3) { /* ignore */ }
+    if (window.ClarinsApp) window.ClarinsApp.toast("Welcome back!", "bx-smile");
+    window.location.href = "home.html";
+  } else {
+    if (err) err.textContent = "Invalid credentials — please check your email and password.";
+    else alert("Invalid credentials");
+  }
+}
+(function () {
+  var form = document.getElementById("form");
+  if (form) form.addEventListener("submit", login);
+})();

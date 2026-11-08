@@ -1,91 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beauty Products Shop</title>
-    <link rel="stylesheet" href="css/styles.css">
-     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clarins — Beauty Products Shop</title>
+  <meta name="description" content="Clarins — luxury beauty products: face, lips, eyes, nails and skin care. Shop bestsellers with easy returns and COD.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-bar">
-            <i class='bx bx-menu sidebarOpen' ></i>
-            <span class="logo navLogo"><a>Clarins</a></span>
-            <div class="menu">
-                <div class="logo-toggle">
-                    <span class="logo"><a>Clarins</a></span>
-                    <i class='bx bx-x siderbarClose'></i>
-                </div>
-                <ul class="nav-links">
-                    
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="login.html">Account</a></li>
-                </ul>
-            </div>
-            <div class="darkLight-searchBox">
-                <div class="dark-light">
-                    <i class='bx bx-moon moon'></i>
-                    <i class='bx bx-sun sun'></i>
-                </div>
-                <div class="searchBox">
-                   <div class="searchToggle">
-                    <i class='bx bx-x cancel'></i>
-                    <i class='bx bx-search search'></i>
-                   </div>
-                    <div class="search-field">
-                        <input type="text" placeholder="Search...">
-                        <i class='bx bx-search'></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <button class="icon-btn sidebarOpen" aria-label="Open menu"><i class="bx bx-menu"></i></button>
+      <a class="logo" href="home.html"><img src="images/Clarins-removebg-preview.png" alt="Clarins logo">Clarins</a>
+      <ul class="nav-links">
+        <li><button class="icon-btn nav-close" aria-label="Close menu"><i class="bx bx-x"></i></button></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Account</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn dark-light" aria-label="Toggle dark mode"><i class="bx bx-moon moon"></i><i class="bx bx-sun sun"></i></button>
+        <a class="icon-btn" href="products.html" aria-label="Wishlist"><i class="bx bx-heart"></i><span class="count-badge" id="wish-count" hidden>0</span></a>
+        <button class="icon-btn" id="cart-btn" aria-label="Open shopping bag"><i class="bx bx-shopping-bag"></i><span class="count-badge" id="cart-count" hidden>0</span></button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-overlay"></div>
 
-    <section class="slideshow-container">
-        <div class="slide fade">
-            <img src="images/banner2.jpg" alt="Slide 1" style="width:100%">
-        </div>
-        <div class="slide fade">
-            <img src="Images/banner1.jpg" alt="Slide 2" style="width:100%">
-        </div>
-        <div class="slide fade">
-            <img src="Images/banner3.jpg" alt="Slide 3" style="width:100%">
-        </div>
-    </section>
+  <!-- Hero slideshow -->
+  <section class="hero">
+    <div class="slideshow">
+      <div class="slide active"><img src="images/banner2.jpg" alt="Clarins beauty collection — slide 1"></div>
+      <div class="slide"><img src="images/banner1.jpg" alt="Clarins beauty collection — slide 2"></div>
+      <div class="slide"><img src="images/banner3.jpg" alt="Clarins beauty collection — slide 3"></div>
+    </div>
+    <div class="hero-copy">
+      <span class="eyebrow">New season · Up to 30% off</span>
+      <h1>Beauty that feels <em>like you.</em></h1>
+      <p>Face, lips, eyes, nails and skin care — 25 hand-picked favourites from brands you love, at honest prices.</p>
+      <a class="btn" href="products.html"><i class="bx bx-shopping-bag"></i> Shop Now</a>
+      <a class="btn btn-ghost" href="about.html" style="background:#fff">Our Story</a>
+    </div>
+    <button class="slide-arrow prev" aria-label="Previous slide"><i class="bx bx-chevron-left"></i></button>
+    <button class="slide-arrow next" aria-label="Next slide"><i class="bx bx-chevron-right"></i></button>
+    <div class="slide-dots"></div>
+  </section>
 
-    <section class="products">
-        <h2>Our Top Products</h2>
-        <div class="product-list">
-            <div class="product-card">
-                <img src="https://www.smashbox.com/media/images/products/388x396/sb_sku_C57L01_388x396_0.jpg" alt="Product Image" alt="Product 1">
-                <h3>SBX Always on skin-balancing Foundation</h3>
-                <p><u>Price:</u> <b> ₹849</b> <strike>₹999   </strike> 15% OFF</p>
-            </div>
-            <div class="product-card">
-                <img src="https://www.ciatelondon.com/cdn/shop/products/VLL01-Velvet-Lip-Liner-Cocoa-Open-min_baa2eb7a-be0b-46a8-a825-3331de29e7c9_720x.png?v=1666106914" alt="Product 2">
-                <h3><em> Ciate Velvet Lip Liner </em> </h3>
-                <p><u>Price:</u> <b> ₹1199</b> <strike>₹1339 </strike> 12% OFF</p>
-            </div>
-            <div class="product-card">
-                <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Ffiles%2FEyeWarnedYouSo_DoubleMatteEyeliner-1080x10801.jpg%3Fv%3D1685635241&w=256&q=75" alt="Product 3">
-                <h3> Sugar Double Matte EyeLiner</h3>
-                    <p><u>Price:</u> <b> ₹712</b> <strike>₹785</strike> 10% OFF</p>
-            </div>
-            <div class="product-card">
-                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSa5rPfiBplzOA4NJlBB55-rnhsfFs8VTYDFR5F7lUPTRwH29dmIYwJ0cba7rmIWcUeWBKNcHpu31IjRIcXyIGKmB7kG4I-s24PCqd2NTrGpjvtF_Y_g00VMg&usqp=CAE" alt="Product 4">
-                <h3>INGLOT Playinn Nail Polish </h3>
-                    <p><u>Price:</u> <b> ₹1489</b> <strike>₹1649</strike> 10% OFF</p>
-            </div>
+  <!-- Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Shop by category</span>
+        <h2>Find your <span>favourites</span></h2>
+        <p>Five categories, 25 products — pick a shelf and start exploring.</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-tile" href="products.html?cat=face"><i class="bx bx-face"></i><strong>Face</strong><small>5 products</small></a>
+        <a class="cat-tile" href="products.html?cat=lips"><i class="bx bxs-smile"></i><strong>Lips</strong><small>5 products</small></a>
+        <a class="cat-tile" href="products.html?cat=eyes"><i class="bx bx-show"></i><strong>Eyes</strong><small>5 products</small></a>
+        <a class="cat-tile" href="products.html?cat=nails"><i class="bx bxs-hand"></i><strong>Nails</strong><small>3 products</small></a>
+        <a class="cat-tile" href="products.html?cat=skin"><i class="bx bx-leaf"></i><strong>Skin Care</strong><small>5 products</small></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top products -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Most loved</span>
+        <h2>Our Top <span>Products</span></h2>
+        <p>The four bestsellers our customers keep coming back for.</p>
+      </div>
+      <div class="product-grid" id="top-products"></div>
+      <div style="text-align:center;margin-top:28px">
+        <a class="btn" href="products.html">View All 25 Products <i class="bx bx-right-arrow-alt"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="trust-strip">
+        <div class="trust-item"><i class="bx bx-package"></i><div><strong>Free shipping over ₹999</strong><small>Fast delivery across India</small></div></div>
+        <div class="trust-item"><i class="bx bx-money"></i><div><strong>Cash on Delivery</strong><small>Pay when your order arrives</small></div></div>
+        <div class="trust-item"><i class="bx bx-undo"></i><div><strong>Easy returns</strong><small>7-day hassle-free returns</small></div></div>
+        <div class="trust-item"><i class="bx bx-badge-check"></i><div><strong>100% authentic</strong><small>Genuine products, always</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Clarins</div>
+          <p>High-quality beauty products that enhance your natural beauty — because everyone deserves to feel confident in their own skin.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Facebook"><i class="bx bxl-facebook-circle"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bx bxl-whatsapp-square"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+            <a href="#" aria-label="Telegram"><i class="bx bxl-telegram"></i></a>
+          </div>
         </div>
-    </section>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html?cat=face">Face</a></li>
+            <li><a href="products.html?cat=lips">Lips</a></li>
+            <li><a href="products.html?cat=eyes">Eyes</a></li>
+            <li><a href="products.html?cat=nails">Nails</a></li>
+            <li><a href="products.html?cat=skin">Skin Care</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign In</a></li>
+            <li><a href="index.html">Sign Up</a></li>
+            <li><a href="products.html">All Products</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; Clarins 2026. All rights reserved.</div>
+    </div>
+  </footer>
 
-    <footer>
-        <p>&copy; Clarins 2024. All rights reserved.</p>
-    </footer>
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag">
+    <div class="cart-head"><h3>Your Bag</h3><button class="icon-btn" id="cart-close" aria-label="Close bag"><i class="bx bx-x"></i></button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-foot">
+      <div class="cart-total-row"><span>Total</span><span id="cart-total">₹0</span></div>
+      <p class="cart-savings" id="cart-savings"></p>
+      <button class="btn btn-block" id="checkout-btn">Checkout</button>
+      <button class="btn btn-ghost btn-block" id="clear-cart-btn" style="margin-top:8px">Clear Bag</button>
+    </div>
+  </aside>
+  <div id="toast-container"></div>
 
-    <script src="js/scripts.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/products.js"></script>
 </body>
 </html>
