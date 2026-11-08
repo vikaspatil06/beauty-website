@@ -1,9 +1,9 @@
 /* ============================================================
    Clarins — product catalogue (vanilla JS)
-   All 23 products, with the exact names, prices, MRPs,
-   discounts and image URLs from the original products.html.
-   Descriptions are the originals shortened to 1–2 lines.
-   No products added, none removed, no prices changed.
+   25 products (5 per category), researched from live Nykaa
+   listings on 7 Nov 2026. Prices are Nykaa selling prices
+   from that day. All photos are stored locally in
+   images/products/ — no hotlinks. See PRODUCT_SOURCES.md.
    ============================================================ */
 window.PRODUCTS = [
   /* ---- FACE (5) ---- */
